@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1198636777400635584}
   - component: {fileID: 2802672206009687162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 6524905931728190948}
   - component: {fileID: -5151399149793984265}
   - component: {fileID: 4095971422153191626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
