@@ -404,7 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   projectileForce: 7
-  projectilePrefab: {fileID: 4931871356246673574, guid: d279afbcf9b4b41e2b71be45cb125a4a,
+  projectilePrefab: {fileID: 3226593111976357110, guid: 2ec6157f221ea41339e959b92bb51687,
     type: 3}
   cooldownTime: 0
 --- !u!1 &1677653112
