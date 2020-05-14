@@ -82,5 +82,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6524905931728190948, guid: 2ec6157f221ea41339e959b92bb51687,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524905931728190948, guid: 2ec6157f221ea41339e959b92bb51687,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524905931728190948, guid: 2ec6157f221ea41339e959b92bb51687,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec6157f221ea41339e959b92bb51687, type: 3}
