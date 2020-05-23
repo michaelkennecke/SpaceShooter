@@ -19,4 +19,15 @@ public class Projectile : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            this.Destroy();
+            //other.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            other.gameObject.GetComponent<Enemy>().Explode();
+            other.gameObject.SetActive(false);
+        }
+    }
 }

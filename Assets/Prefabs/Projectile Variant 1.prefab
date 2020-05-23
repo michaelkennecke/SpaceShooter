@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3226593111976357110, guid: 2ec6157f221ea41339e959b92bb51687,
+        type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 6524905931728190948, guid: 2ec6157f221ea41339e959b92bb51687,
         type: 3}
       propertyPath: m_Color.r

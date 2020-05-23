@@ -16,7 +16,7 @@ public class MultishotWeapon : Weapon
         {
             for (int i = 0; i < amountOfProjectiles; i++)
             {
-                GameObject tmpProjectile = this.projectilePool.GetPooledProjectile();
+                GameObject tmpProjectile = this.projectilePool.GetPooledGameObject();
                 if (tmpProjectile == null) return;
                 tmpProjectile.transform.position = shootingPoints[i].position;
                 tmpProjectile.transform.rotation = shootingPoints[i].rotation;

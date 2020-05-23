@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private int selectedWeapon;
     Transform _transform;
     Camera _camera;
+    public Vector2 moveDirection;
+    private Rigidbody2D rb;
 
     void Start()
     {
@@ -14,12 +16,13 @@ public class PlayerController : MonoBehaviour
         this._camera = Camera.main;
         selectedWeapon = 0;
         SelectWeapon();
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         this.Rotate();
-        this.MoveSpaceship();
+        moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (Input.GetButtonDown("Fire1"))
         {
             this.weapon.GetComponent<Weapon>().Shoot();
@@ -53,6 +56,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        MoveSpaceship(moveDirection);
+    }
+
     void Rotate()
     {
         Vector2 mousePos = this._camera.ScreenToWorldPoint(Input.mousePosition);
@@ -61,10 +69,9 @@ public class PlayerController : MonoBehaviour
         this._transform.rotation = Quaternion.Euler(0, 0, angleDeg - 90);//diese -90 sind nötig für Sprites, die nach oben zeigen. Nutzen Sie andere Assets, könnte es sein, dass die das anpassen müssen
     }
 
-    void MoveSpaceship()
+    void MoveSpaceship(Vector2 direction)
     {
-        Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        this._transform.position += moveDirection * this.speed * Time.deltaTime;
+        rb.MovePosition((Vector2)transform.position + (moveDirection * this.speed * Time.deltaTime));
     }
 
     void SelectWeapon()

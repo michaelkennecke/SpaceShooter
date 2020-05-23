@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] protected float projectileForce = 7.0f;
     [SerializeField] protected float shootingCooldownTime = 0.1f;
-    [SerializeField] protected ProjectilePool projectilePool;
+    [SerializeField] protected ObjectPool projectilePool;
     [SerializeField] protected Transform shootingPoint;
     protected float cooldownTimer;
 
@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
     {
         if (this.cooldownTimer == 0)
         {
-            GameObject projectile = this.projectilePool.GetPooledProjectile();
+            GameObject projectile = this.projectilePool.GetPooledGameObject();
             if (projectile == null) return;
             projectile.transform.position = this.shootingPoint.position;
             projectile.transform.rotation = this.shootingPoint.rotation;
