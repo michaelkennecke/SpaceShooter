@@ -23,6 +23,7 @@ public class MultishotWeapon : Weapon
                 tmpProjectile.SetActive(true);
                 Rigidbody2D rb = tmpProjectile.GetComponent<Rigidbody2D>();
                 rb.AddForce(shootingPoints[i].up * this.projectileForce, ForceMode2D.Impulse);
+                this.shotAudio.Play();
             }
             this.cooldownTimer = this.shootingCooldownTime;
         }

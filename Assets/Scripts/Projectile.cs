@@ -26,8 +26,8 @@ public class Projectile : MonoBehaviour
         {
             this.Destroy();
             //other.gameObject.GetComponentInChildren<ParticleSystem>().Play();
-            other.gameObject.GetComponent<Enemy>().Explode();
-            other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<Enemy>().Hit();
+            //other.gameObject.SetActive(false);
         }
     }
 }

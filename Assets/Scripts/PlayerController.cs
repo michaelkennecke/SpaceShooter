@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 3.0f;
     [SerializeField] GameObject weapon;
+    [SerializeField] int lifePoints = 3;
     private int selectedWeapon;
     Transform _transform;
     Camera _camera;
@@ -86,6 +87,20 @@ public class PlayerController : MonoBehaviour
             }
             i++;
         }
+    }
+
+    void LoseLifePoint()
+    {
+        this.lifePoints -= 1;
+        if (this.lifePoints <= 0)
+        {
+            SceneController.Instance.ToEndMenu();
+        }
+    }
+
+    public void Hit()
+    {
+        this.LoseLifePoint();
     }
 
 }

@@ -9,10 +9,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected ObjectPool projectilePool;
     [SerializeField] protected Transform shootingPoint;
     protected float cooldownTimer;
+    protected AudioSource shotAudio;
 
     void Start()
     {
-        //this.shootingPoint = transform;   
+        this.shotAudio = this.GetComponent<AudioSource>();   
     }
 
     void Update()
@@ -32,6 +33,7 @@ public class Weapon : MonoBehaviour
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.AddForce(this.shootingPoint.up * this.projectileForce, ForceMode2D.Impulse);
             this.cooldownTimer = this.shootingCooldownTime;
+            this.shotAudio.Play();
         }
         else return; 
     }
